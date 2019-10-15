@@ -12,6 +12,7 @@ render(){
             <li className='nav-link-li'><Link className='nav-link' to='/'>Home</Link></li>
             <li className='nav-link-li'><Link className='nav-link' to='/scheduel'>My Scheduel</Link></li>
             <li className='nav-link-li'><Link className='nav-link' to='/rate'>Rate My Class</Link></li>
+            <li className='nav-link-li'><Link className='nav-link' to='/rate'>Login</Link></li>
        </ul>
    </nav>
   );
