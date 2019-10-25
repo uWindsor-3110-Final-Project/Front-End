@@ -1,6 +1,9 @@
 import React, { Component } from "react";
 import "../style/UserInfo.css";
 import "bootstrap/dist/css/bootstrap.min.css";
+import Form from "react-bootstrap/Form";
+import ReactDOM from "react-dom";
+import { Col, Row } from "react-bootstrap";
 
 class schedule extends Component {
   constructor(props) {
@@ -47,13 +50,17 @@ class schedule extends Component {
 
   render() {
     return (
-      <div className="form-for-info">
-        <form onSubmit={this.handleSubmit}>
+      <Form className="form-for-info" onSubmit={this.handleSubmit}>
+        <Row>
           <h3 className="form-header">Enter the following details:</h3>
-          <br></br>
-          <div>
-            <label className="entity-label">
-              University Start Year:
+        </Row>
+
+        <Row>
+          <Col>
+            <label className="entity-label">University Start Year:</label>
+          </Col>
+          <Col>
+            <div className="selection-label">
               <select className="menu">
                 {this.state.startYear.map(list => (
                   <option key={list} value={list}>
@@ -61,11 +68,16 @@ class schedule extends Component {
                   </option>
                 ))}
               </select>
-            </label>
-            <br></br>
+            </div>
+          </Col>
+        </Row>
 
-            <label className="entity-label">
-              Department:
+        <Row>
+          <Col>
+            <label className="entity-label">Department:</label>
+          </Col>
+          <Col>
+            <div className="selection-label">
               <select className="menu">
                 {this.state.department.map(list => (
                   <option key={list} value={list}>
@@ -73,10 +85,16 @@ class schedule extends Component {
                   </option>
                 ))}
               </select>
-            </label>
-            <br></br>
-            <label className="entity-label">
-              Major:
+            </div>
+          </Col>
+        </Row>
+
+        <Row>
+          <Col>
+            <label className="entity-label">Major:</label>
+          </Col>
+          <Col>
+            <div className="selection-label">
               <select className="menu">
                 {this.state.major.map(list => (
                   <option key={list} value={list}>
@@ -84,23 +102,29 @@ class schedule extends Component {
                   </option>
                 ))}
               </select>
-            </label>
-            <br></br>
-            <label className="entity-label">
-              Expected Graduation Year:
-              <select className="menu">
-                {this.state.expectedGradYear.map(list => (
-                  <option key={list} value={list}>
-                    {list}
-                  </option>
-                ))}
-              </select>
-            </label>
-            <br></br>
-            <input type="submit" value="Submit" />
-          </div>
-        </form>
-      </div>
+            </div>
+          </Col>
+        </Row>
+
+        <Row>
+          <Col>
+            <label className="entity-label">Expected Graduation Year:</label>
+          </Col>
+          <Col>
+            <select className="menu">
+              {this.state.expectedGradYear.map(list => (
+                <option key={list} value={list}>
+                  {list}
+                </option>
+              ))}
+            </select>
+          </Col>
+        </Row>
+
+        <Row>
+          <input type="submit" value="Submit" />
+        </Row>
+      </Form>
     );
   }
 }

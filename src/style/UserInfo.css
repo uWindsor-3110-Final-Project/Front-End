@@ -55,5 +55,10 @@
 .entity-label {
   float: left;
   text-align: left;
+  width: 5cm;
+}
+.selection-label {
+  float: right;
+  text-align: right;
   width: auto;
 }
