@@ -16,6 +16,7 @@ function login(username, password) {
         body: JSON.stringify({ username, password })
     };
 
+    // TODO: Fix this
     //return fetch(`${config.apiUrl}/users/authenticate`, requestOptions)
     return fetch(`http://localhost:3000/users/authenticate`, requestOptions)
         .then(handleResponse)
