@@ -6,6 +6,7 @@ import { PrivateRoute } from './PrivateRouter';
 import HomePage from './homePage';
 import { userService } from '../services/user-service';
 import { LoginPage } from './LoginPage';
+import { SignUp } from './SignUp';
 
 class NavBar extends React.Component{
     constructor(props) {
@@ -28,6 +29,8 @@ class NavBar extends React.Component{
               {/*Private routes need to be logged in*/}
               {/*Regular routes are irrelevant*/}
               <PrivateRoute exact path="/schedule" component={HomePage} />
+              <PrivateRoute exact path="/" component={HomePage} />
+              <Route exact path="/signup" component={SignUp} />
               <Route path="/login" component={LoginPage} />
               <nav>
                   <ul className='nav-links'>
