@@ -6,6 +6,7 @@ import { PrivateRoute } from './PrivateRouter';
 import HomePage from './homePage';
 import { userService } from '../services/user-service';
 import { LoginPage } from './LoginPage';
+import {SequenceManager} from './SequenceManager';
 
 class NavBar extends React.Component{
     constructor(props) {
