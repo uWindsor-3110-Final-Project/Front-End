@@ -67,8 +67,8 @@ class NavBar extends React.Component {
               </Link>
             </li>
             <li className="nav-link-li">
-              <Link className="nav-link" to="/rate">
-                Rate My Class
+              <Link className="nav-link" to="/admin">
+                Admin
               </Link>
             </li>
             {button}
