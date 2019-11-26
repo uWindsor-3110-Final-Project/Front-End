@@ -1,5 +1,5 @@
 import React from 'react';
-import './App.css';
+//import './App.css';
 import "bootstrap/dist/css/bootstrap.min.css";
 
 
@@ -8,7 +8,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 class SequenceManager extends React.Component {
 render(){
   return (
-    <div className="App">
+    <div >
       <div class="col align-left">
       Year One
     </div>
@@ -122,4 +122,4 @@ render(){
 }
 }
 
-export default SequenceManager;
+export  {SequenceManager};
