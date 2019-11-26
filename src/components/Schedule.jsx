@@ -58,7 +58,7 @@ class Schedule extends React.Component {
         const { redirect } = this.state;
 
         if (redirect) {
-            return <Redirect to='/somewhere'/>;
+            return <Redirect to='/sequence'/>;
         }
 
         return (
