@@ -3,7 +3,7 @@ import '../style/userInfo.css';
 import Form from 'react-bootstrap/Form';
 import ReactDOM from 'react-dom';
 import { Col, Row } from 'react-bootstrap';
-import { sequenceService } from '../services/sequence-service';
+import { Redirect } from 'react-router-dom'
 
 class Schedule extends React.Component {
     constructor(props) {
@@ -13,7 +13,8 @@ class Schedule extends React.Component {
             startYear: '',
             department: '',
             major: '',
-            expectedGradYear: ''
+            expectedGradYear: '',
+            redirect: false
         };
 
         this.handleChange = this.handleChange.bind(this);
@@ -28,14 +29,7 @@ class Schedule extends React.Component {
 
     handleSubmit(event) {
         event.preventDefault();
-        sequenceService.login(username, password)
-            .then(
-                user => {
-                    const { from } = this.props.location.state || { from: { pathname: "/" } };
-                    this.props.history.push(from);
-                },
-                error => this.setState({ error, loading: false })
-            );
+        this.setState({ redirect: true });
     }
 
     render() {
@@ -60,6 +54,12 @@ class Schedule extends React.Component {
             'Bachelor of Computer Science (General)',
             'Computer Science for University Graduates'
         ];
+
+        const { redirect } = this.state;
+
+        if (redirect) {
+            return <Redirect to='/somewhere'/>;
+        }
 
         return (
             <Form className='form-for-info' onSubmit={this.handleSubmit}>
