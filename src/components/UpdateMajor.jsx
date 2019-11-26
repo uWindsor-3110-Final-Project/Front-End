@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { Link, BrowserRouter as Router, Route } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
 
 class UpdateMajor extends Component {
@@ -24,9 +25,9 @@ class UpdateMajor extends Component {
             </div>
 
             <div>
-              <a role="button" href="./admin" class="btn btn-success btn-block">
+              <Link to="/admin" class="btn btn-success btn-block">
                 Return
-              </a>
+              </Link>
             </div>
           </form>
         </p>
