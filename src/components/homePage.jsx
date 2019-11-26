@@ -12,7 +12,7 @@ import {Link} from 'react-router-dom';
 function HomePage() {
   return (
     <div>
-        <h1 className='form-header'>This is the homepage</h1>
+        <h1 className='header'>This is the homepage</h1>
     </div>
   );
 }
