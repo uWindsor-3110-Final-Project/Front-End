@@ -6,7 +6,8 @@ import { PrivateRoute } from './PrivateRouter';
 import HomePage from './homePage';
 import { userService } from '../services/user-service';
 import { LoginPage } from './LoginPage';
-import {SequenceManager} from './SequenceManager';
+import { SignUp } from './SignUp';
+import { Schedule } from './Schedule';
 
 class NavBar extends React.Component{
     constructor(props) {
@@ -28,8 +29,6 @@ class NavBar extends React.Component{
           <Router>
               {/*Private routes need to be logged in*/}
               {/*Regular routes are irrelevant*/}
-             
-              
               <nav>
                   <ul className='nav-links'>
                       <li className='nav-link-li'><img className='logo' src={fullstackdads} alt={"Full Stack Dads"}></img></li>
@@ -39,9 +38,11 @@ class NavBar extends React.Component{
                       {button}
                   </ul>
             </nav>
-          <PrivateRoute exact path="/schedule" component={HomePage} />
+              <PrivateRoute exact path="/Schedule" component={Schedule} />
+              <PrivateRoute exact path="/" component={HomePage} />
+              <Route exact path="/signup" component={SignUp} />
               <Route path="/login" component={LoginPage} />
-          <PrivateRoute path="/sequence" component={SequenceManager} />
+              {/*<PrivateRoute path="/sequence" component={SequenceManager} />*/}
           </Router>
       );
     }
