@@ -8,6 +8,7 @@ import { userService } from '../services/user-service';
 import { LoginPage } from './LoginPage';
 import { SignUp } from './SignUp';
 import { Schedule } from './Schedule';
+import { SequenceManager } from './SequenceManager';
 
 class NavBar extends React.Component{
     constructor(props) {
@@ -42,7 +43,7 @@ class NavBar extends React.Component{
               <PrivateRoute exact path="/" component={HomePage} />
               <Route exact path="/signup" component={SignUp} />
               <Route path="/login" component={LoginPage} />
-              {/*<PrivateRoute path="/sequence" component={SequenceManager} />*/}
+              <PrivateRoute path="/sequence" component={SequenceManager} />
           </Router>
       );
     }
